@@ -1,0 +1,18 @@
+CreateUser:
+    post:
+      tags:
+        - "Firebase Authentication"
+      summary: "Endpoint: /user/create-user"
+      description: "Description"
+      requestBody:
+        description: "Body to create an user with custom claims."
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '../../components/FirebaseAuth/CreateUser/schema.yml#/BodyCreateUser'
+      responses:
+        200:
+          $ref: '../../components/FirebaseAuth/CreateUser/schema.yml#/Response200'
+        403:
+          $ref: '../../components/FirebaseAuth/CreateUser/schema.yml#/Response403'

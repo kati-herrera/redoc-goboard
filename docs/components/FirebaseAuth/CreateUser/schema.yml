@@ -1,0 +1,54 @@
+# Reponses when create an user, status 200, status 403
+BodyCreateUser:
+      title: "Body create user"
+      type: "object"
+      required:
+        - email
+        - password
+      properties:
+        email:
+          type: "string"
+        password:
+          type: "string"
+
+components:
+  schemas:
+    BodyCreateUser:
+      title: "Body create user"
+      type: "object"
+      required:
+        - email
+        - password
+      properties:
+        email:
+          type: "string"
+        password:
+          type: "string"
+    Status200:
+      title: "Succesfull"
+      type: "object"
+      properties:
+        message: 
+          type: "string"
+          example: "Operation Successful"
+    Status403:
+      title: "Forbbiden."
+      type: "object"
+      properties:
+        message:
+          type: "string"
+          example: "Bad Request"
+          
+# responses:
+Response200:
+  description: "User created successful."
+  content:
+    application/json:
+      schema:
+        $ref: "#/components/schemas/Status200"
+Response403:
+  description: "Forbbiden."
+  content:
+    application/json:
+      schema:
+        $ref: "#/components/schemas/Status403"

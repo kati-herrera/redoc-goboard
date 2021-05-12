@@ -1,0 +1,48 @@
+openapi: 3.1.0
+info:
+  title: GoBoard API
+  contact:
+    name: GoBoard Support
+    url: https://goboard.com/
+    email: help@goboard.com
+  license:
+    name: Apache
+    url: http://apache.org/licenses/LICENSE-2.0.html
+  description: |
+    # Introduction
+    This API is documented in **OpenAPI format**.
+    # Authentication
+      - Access-Token
+  x-logo:
+    url: https://goboard.com/home/assets/images/goboard-logo.svg
+    altText: GoBoard API
+  version: 1.0.0
+
+tags:
+  - name: Firebase Authentication
+  - name: Other tittle
+
+servers:
+  - url: https://api.develop.go-board.com
+    description: Develop Server
+  - url: https://api.qa.go-board.com
+    description: QA Server
+  - url: https://api.production.go-board.com
+    description: Production Server
+
+security:
+  - access_token: []
+
+components:
+  securitySchemes:
+    access_token:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: "Token to authorize the API."
+
+paths:
+  /user/create-user:
+    $ref: ./controllers/FirebaseAuth/CreateUser.yml#/CreateUser
+  /user/create-custom-tokens:
+    $ref: ./controllers/FirebaseAuth/CreateCustomToken.yml#/CreateCustomToken

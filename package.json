@@ -1,0 +1,36 @@
+{
+  "name": "redoc-todo-list",
+  "version": "1.0.0",
+  "description": "example for documentation api with redoc",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "docs:serve": "redoc-cli serve --watch docs/openapi.yml",
+    "docs:build": "redoc-cli bundle docs/openapi.yml --output index.html",
+    "docs": "concurrently \"npm run docs:serve\" \"npm run docs:build\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WilliamDeLaEspriella/redoc-todo-list.git"
+  },
+  "keywords": [
+    "redoc",
+    "documentation",
+    "api",
+    "swagger",
+    "redoc-cli",
+    "openapi"
+  ],
+  "author": "William De la Espriella",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/WilliamDeLaEspriella/redoc-todo-list/issues"
+  },
+  "homepage": "https://github.com/WilliamDeLaEspriella/redoc-todo-list#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "concurrently": "^6.0.2",
+    "redoc-cli": "0.10.4"
+  }
+}

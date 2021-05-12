@@ -1,0 +1,55 @@
+
+BodyCreateCustomToken:
+      title: "Body create custom token"
+      type: "object"
+      required:
+        - uid
+        - secret
+      properties:
+        uid:
+          type: "string"
+        secret:
+          type: "string"
+
+# Reponses when create an user, status 200, status 403
+components:
+  schemas:
+    BodyCreateCustomToken:
+      title: "Body create custom token"
+      type: "object"
+      required:
+        - uid
+        - secret
+      properties:
+        uid:
+          type: "string"
+        password:
+          type: "string"
+    Status200:
+      title: "Succesfull"
+      type: "object"
+      properties:
+        message: 
+          type: "string"
+          example: "Operation Successful"
+    Status403:
+      title: "Forbbiden."
+      type: "object"
+      properties:
+        message:
+          type: "string"
+          example: "Bad Request"
+          
+# responses:
+Response200:
+  description: "Token created successful."
+  content:
+    application/json:
+      schema:
+        $ref: "#/components/schemas/Status200"
+Response403:
+  description: "Forbbiden."
+  content:
+    application/json:
+      schema:
+        $ref: "#/components/schemas/Status403"
