@@ -17,4 +17,4 @@ npm run docs
 ```
 npm run docs:build
 ```
-The build will generate a index.html file in the project root.
+The build will generate an index.html file in the project root.
