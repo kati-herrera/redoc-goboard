@@ -19,16 +19,11 @@ info:
   version: 1.0.0
 
 tags:
-  - name: Firebase Authentication
-  - name: Other tittle
+  - name: Custom configure
 
 servers:
-  - url: https://api.develop.go-board.com
-    description: Develop Server
-  - url: https://api.qa.go-board.com
-    description: QA Server
-  - url: https://api.production.go-board.com
-    description: Production Server
+  - url: https://us-central1-tms-board.cloudfunctions.net
+    description: Server
 
 security:
   - access_token: []
@@ -42,7 +37,7 @@ components:
       description: "Token to authorize the API."
 
 paths:
-  /user/create-user:
+  /token:
     $ref: ./controllers/FirebaseAuth/CreateUser.yml#/CreateUser
-  /user/create-custom-tokens:
+  /room/configure:
     $ref: ./controllers/FirebaseAuth/CreateCustomToken.yml#/CreateCustomToken

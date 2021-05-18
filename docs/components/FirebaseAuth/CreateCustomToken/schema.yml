@@ -1,55 +1,75 @@
 
-BodyCreateCustomToken:
+BodyConfigRoom:
       title: "Body create custom token"
       type: "object"
       required:
-        - uid
-        - secret
+        - room_id
+        - start_time
+        - end_time
+        - school
+        - return_url
       properties:
-        uid:
+        room_id:
           type: "string"
-        secret:
+        start_time:
+          type: "string"
+        end_time:
+          type: "string"
+        school:
+          type: "string"
+        return_url:
           type: "string"
 
 # Reponses when create an user, status 200, status 403
 components:
   schemas:
-    BodyCreateCustomToken:
-      title: "Body create custom token"
-      type: "object"
-      required:
-        - uid
-        - secret
-      properties:
-        uid:
-          type: "string"
-        password:
-          type: "string"
     Status200:
-      title: "Succesfull"
+      title: "Successful"
       type: "object"
       properties:
-        message: 
+        error: 
+          type: "boolean"
+          example: "false"
+        msg:
           type: "string"
-          example: "Operation Successful"
-    Status403:
-      title: "Forbbiden."
+          example: "Data saved successfully"
+    Status400:
+      title: "Forbbiden"
       type: "object"
       properties:
-        message:
+        error: 
+          type: "boolean"
+          example: "true"
+        msg:
           type: "string"
-          example: "Bad Request"
+          example: "PARAM is missing or invalid"
+    Status500:
+      title: "Error 500"
+      type: "object"
+      properties:
+        error: 
+          type: "boolean"
+          example: "true"
+        msg:
+          type: "string"
+          example: "There was an unknown error saving data into database"
           
 # responses:
 Response200:
-  description: "Token created successful."
+  description: "Room configure"
   content:
     application/json:
       schema:
         $ref: "#/components/schemas/Status200"
-Response403:
-  description: "Forbbiden."
+Response400:
+  description: "Forbbiden"
   content:
     application/json:
       schema:
-        $ref: "#/components/schemas/Status403"
+        $ref: "#/components/schemas/Status400"
+Response500:
+  description: "Error 500"
+  content:
+    application/json:
+      schema:
+        $ref: "#/components/schemas/Status500"

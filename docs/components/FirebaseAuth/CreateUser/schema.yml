@@ -1,47 +1,45 @@
 # Reponses when create an user, status 200, status 403
-BodyCreateUser:
+BodyCreateToken:
       title: "Body create user"
       type: "object"
       required:
-        - email
-        - password
+        - apiKey
+        - secret
       properties:
-        email:
+        apiKey:
           type: "string"
-        password:
+        secret:
           type: "string"
 
 components:
   schemas:
-    BodyCreateUser:
-      title: "Body create user"
-      type: "object"
-      required:
-        - email
-        - password
-      properties:
-        email:
-          type: "string"
-        password:
-          type: "string"
     Status200:
-      title: "Succesfull"
+      title: "Successful"
       type: "object"
       properties:
-        message: 
+        error:
+          type: "boolean"
+          example: "false"
+        msg: 
           type: "string"
-          example: "Operation Successful"
+          example: "Access granted"
+        token:
+          type: "string"
+          example: "TOKEN_TOKEN"
     Status403:
-      title: "Forbbiden."
+      title: "Forbbiden"
       type: "object"
       properties:
-        message:
+        error:
+          type: "boolean"
+          example: "true"
+        msg: 
           type: "string"
-          example: "Bad Request"
+          example: "Access forbidden"
           
 # responses:
 Response200:
-  description: "User created successful."
+  description: "Token created"
   content:
     application/json:
       schema:
