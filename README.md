@@ -1,10 +1,9 @@
-# redoc-todo-list
+# redoc-goBoard
 
 ## INSTALL
 
 ``` cmd
 npm install
-npm start
 ```
 
 ## RUN DOCUMENTATION
@@ -12,3 +11,10 @@ npm start
 ```
 npm run docs
 ```
+
+## GENERATED BUILD DOCUMENTATION
+
+```
+npm run docs:build
+```
+The build will generate a index.html file in the project root.
