@@ -1,0 +1,17 @@
+RegisterBoard:
+    post:
+      tags:
+        - "API Methods Default"
+      summary: "Endpoint: /board/register"
+      description: "Registers a new GoBoard id"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '../../components/apiMethodsDefault/RegisterBoard/schema.yml#/RegisterBoard'
+      responses:
+        200:
+          $ref: '../../components/apiMethodsDefault/RegisterBoard/schema.yml#/Response200'
+        403:
+          $ref: '../../components/apiMethodsDefault/RegisterBoard/schema.yml#/Response400'

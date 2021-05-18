@@ -1,0 +1,17 @@
+StartRecording:
+    post:
+      tags:
+        - "API Methods Default"
+      summary: "Endpoint: /record/start"
+      description: "Starts recording a room"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '../../components/apiMethodsDefault/StartRecording/schema.yml#/StartRecording'
+      responses:
+        200:
+          $ref: '../../components/apiMethodsDefault/StartRecording/schema.yml#/Response200'
+        403:
+          $ref: '../../components/apiMethodsDefault/StartRecording/schema.yml#/Response400'

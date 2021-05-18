@@ -1,0 +1,20 @@
+RoomConfigured:
+    post:
+      tags:
+        - "Custom configure"
+      summary: "Endpoint: /room/configure"
+      description: "Configure room"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '../../components/FirebaseAuth/RoomConfigured/schema.yml#/RoomConfigured'
+      responses:
+        200:
+          $ref: '../../components/FirebaseAuth/RoomConfigured/schema.yml#/Response200'
+        403:
+          $ref: '../../components/FirebaseAuth/RoomConfigured/schema.yml#/Response400'
+        500:
+          $ref: '../../components/FirebaseAuth/RoomConfigured/schema.yml#/Response500'
+

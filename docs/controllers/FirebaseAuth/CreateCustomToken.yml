@@ -2,19 +2,16 @@ CreateCustomToken:
     post:
       tags:
         - "Custom configure"
-      summary: "Endpoint: /room/configure"
-      description: "Description"
+      summary: "Endpoint: /token"
+      description: "Create Custom Token"
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: '../../components/FirebaseAuth/CreateCustomToken/schema.yml#/BodyConfigRoom'
+              $ref: '../../components/FirebaseAuth/CreateCustomToken/schema.yml#/BodyCreateToken'
       responses:
         200:
           $ref: '../../components/FirebaseAuth/CreateCustomToken/schema.yml#/Response200'
         403:
-          $ref: '../../components/FirebaseAuth/CreateCustomToken/schema.yml#/Response400'
-        500:
-          $ref: '../../components/FirebaseAuth/CreateCustomToken/schema.yml#/Response500'
-
+          $ref: '../../components/FirebaseAuth/CreateCustomToken/schema.yml#/Response403'

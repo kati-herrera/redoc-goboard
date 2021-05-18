@@ -1,0 +1,17 @@
+ExportPdf:
+    post:
+      tags:
+        - "API Methods Default"
+      summary: "Endpoint: /export/pdf"
+      description: "Exports a board PDF"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '../../components/apiMethodsDefault/ExportPdf/schema.yml#/BodyExportPdf'
+      responses:
+        200:
+          $ref: '../../components/apiMethodsDefault/ExportPdf/schema.yml#/Response200'
+        403:
+          $ref: '../../components/apiMethodsDefault/ExportPdf/schema.yml#/Response400'

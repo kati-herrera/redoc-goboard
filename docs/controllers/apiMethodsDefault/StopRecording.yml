@@ -1,0 +1,17 @@
+StopRecording:
+    post:
+      tags:
+        - "API Methods Default"
+      summary: "Endpoint: /record/stop"
+      description: "Stops recording a room"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '../../components/apiMethodsDefault/StopRecording/schema.yml#/StopRecording'
+      responses:
+        200:
+          $ref: '../../components/apiMethodsDefault/StopRecording/schema.yml#/Response200'
+        403:
+          $ref: '../../components/apiMethodsDefault/StopRecording/schema.yml#/Response400'

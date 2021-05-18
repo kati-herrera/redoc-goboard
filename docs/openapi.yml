@@ -20,10 +20,13 @@ info:
 
 tags:
   - name: Custom configure
+  - name: API Methods Default
 
 servers:
   - url: https://us-central1-tms-board.cloudfunctions.net
-    description: Server
+    description: Server Custom configure
+  - url: https://developer.goboard.com/api/v1.0.0
+    description: Server API Methods Default
 
 security:
   - access_token: []
@@ -38,6 +41,16 @@ components:
 
 paths:
   /token:
-    $ref: ./controllers/FirebaseAuth/CreateUser.yml#/CreateUser
-  /room/configure:
     $ref: ./controllers/FirebaseAuth/CreateCustomToken.yml#/CreateCustomToken
+  /room/configure:
+    $ref: ./controllers/FirebaseAuth/RoomConfigured.yml#/RoomConfigured
+  /export/pdf:
+    $ref: ./controllers/apiMethodsDefault/ExportPdf.yml#/ExportPdf
+  /board/join:
+    $ref: ./controllers/apiMethodsDefault/JoinBoard.yml#/JoinBoard
+  /board/register:
+    $ref: ./controllers/apiMethodsDefault/RegisterBoard.yml#/RegisterBoard
+  /record/start:
+    $ref: ./controllers/apiMethodsDefault/StartRecording.yml#/StartRecording
+  /record/stop:
+    $ref: ./controllers/apiMethodsDefault/StopRecording.yml#/StopRecording

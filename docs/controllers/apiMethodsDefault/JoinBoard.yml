@@ -1,0 +1,17 @@
+JoinBoard:
+    post:
+      tags:
+        - "API Methods Default"
+      summary: "Endpoint: /board/join"
+      description: "Joins a room"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '../../components/apiMethodsDefault/JoinBoard/schema.yml#/JoinBoard'
+      responses:
+        200:
+          $ref: '../../components/apiMethodsDefault/JoinBoard/schema.yml#/Response200'
+        403:
+          $ref: '../../components/apiMethodsDefault/JoinBoard/schema.yml#/Response400'

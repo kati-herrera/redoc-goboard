@@ -1,0 +1,43 @@
+
+StopRecording:
+      type: "object"
+      required:
+        - roomId
+        - key
+      properties:
+        roomId:
+          type: "string"
+        key:
+          type: "string"
+
+# Reponses when create an user, status 200, status 403
+components:
+  schemas:
+    Status200:
+      title: "Successful"
+      type: "object"
+      properties:
+        error: 
+          type: "boolean"
+          example: "false"
+    Status400:
+      title: "Export Error"
+      type: "object"
+      properties:
+        message:
+          type: "string"
+          example: "Recording cannot be stopped"
+          
+# responses:
+Response200:
+  description: "Recording Started"
+  content:
+    application/json:
+      schema:
+        $ref: "#/components/schemas/Status200"
+Response400:
+  description: "Recording Error"
+  content:
+    application/json:
+      schema:
+        $ref: "#/components/schemas/Status400"

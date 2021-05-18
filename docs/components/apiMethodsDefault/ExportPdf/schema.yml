@@ -1,0 +1,45 @@
+
+BodyExportPdf:
+      type: "object"
+      required:
+        - roomId
+        - key
+      properties:
+        roomId:
+          type: "string"
+        print:
+          type: "string"
+        key:
+          type: "string"
+
+# Reponses when create an user, status 200, status 403
+components:
+  schemas:
+    Status200:
+      title: "Successful"
+      type: "object"
+      properties:
+        url: 
+          type: "string"
+          example: "https://path.to.file.pdf"
+    Status400:
+      title: "Export Error"
+      type: "object"
+      properties:
+        message:
+          type: "string"
+          example: "Room does not exist or is empty"
+          
+# responses:
+Response200:
+  description: "Successful"
+  content:
+    application/json:
+      schema:
+        $ref: "#/components/schemas/Status200"
+Response400:
+  description: "Export Error"
+  content:
+    application/json:
+      schema:
+        $ref: "#/components/schemas/Status400"
