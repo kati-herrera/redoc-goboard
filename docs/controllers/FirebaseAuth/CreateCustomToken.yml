@@ -1,7 +1,7 @@
 CreateCustomToken:
     post:
       tags:
-        - "Custom configure"
+        - "Integrations"
       summary: "Endpoint: /token"
       description: "Create Custom Token"
       requestBody:

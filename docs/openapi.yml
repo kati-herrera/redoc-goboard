@@ -19,14 +19,12 @@ info:
   version: 1.0.0
 
 tags:
-  - name: Custom configure
+  - name: Integrations
   - name: API Methods Default
 
 servers:
   - url: https://us-central1-tms-board.cloudfunctions.net
-    description: Server Custom configure
-  - url: https://developer.goboard.com/api/v1.0.0
-    description: Server API Methods Default
+    description: Server Integrations
 
 security:
   - access_token: []

@@ -1,7 +1,7 @@
 RoomConfigured:
     post:
       tags:
-        - "Custom configure"
+        - "Integrations"
       summary: "Endpoint: /room/configure"
       description: "Configure room"
       requestBody:
